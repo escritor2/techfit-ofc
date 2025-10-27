@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechFit - Academia Digital</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+  <header>
+    <div class="logo">
+      <h1>TECHFIT</h1>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Buscar atividades ou produtos..." />
+      <button onclick="searchItems()">🔍</button>
+    </div>
+    <div class="actions">
+      <button id="themeToggle" class="btn-icon">🌙</button>
+      <button id="openLogin" class="btn">Login</button>
+      <button id="openCadastro" class="btn btn-outline">Cadastro</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Bem-vindo ao Futuro da Fitness</h2>
+      <p>Treine com IA, biofeedback e realidade aumentada.</p>
+    </section>
+
+    <section class="tabs">
+      <button class="tab active" data-tab="atividades">Atividades</button>
+      <button class="tab" data-tab="produtos">Produtos</button>
+      <button class="tab" data-tab="inscricoes">Inscrições</button>
+    </section>
+
+    <section id="atividades" class="content-section active">
+      <h3>Atividades</h3>
+      <div class="grid" id="atividadesGrid">
+        <div class="card">
+          <div class="card-header">💪 CrossFit Neural</div>
+          <div class="card-body">Treino adaptativo com feedback cerebral.</div>
+        </div>
+        <div class="card">
+          <div class="card-header">🧘 Yoga BioSync</div>
+          <div class="card-body">Harmonize sua mente com sensores de frequência cardíaca.</div>
+        </div>
+        <div class="card">
+          <div class="card-header">⚡ HIIT Quantum</div>
+          <div class="card-body">Intensidade máxima com sincronização de energia.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="produtos" class="content-section">
+      <h3>Produtos</h3>
+      <div class="grid" id="produtosGrid">
+        <div class="card">
+          <div class="card-header">🛒 Whey Nano</div>
+          <div class="card-body">Proteína de absorção instantânea com nanotecnologia.</div>
+        </div>
+        <div class="card">
+          <div class="card-header">⌚ FitBand X</div>
+          <div class="card-body">Monitor de treino com IA integrada.</div>
+        </div>
+        <div class="card">
+          <div class="card-header">💧 Hydrate Pro</div>
+          <div class="card-body">Água inteligente com eletrólitos ajustáveis.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="inscricoes" class="content-section">
+      <h3>Inscrições</h3>
+      <div id="inscricoesList">
+        <p>Você ainda não possui inscrições.</p>
+      </div>
+    </section>
+  </main>
+  
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="E-mail" required />
+        <input type="password" id="loginPassword" placeholder="Senha" required />
+        <button type="submit" class="btn">Entrar</button>
+        <p class="switch-modal">
+          Não tem conta? <a href="#" id="switchToCadastro">Cadastre-se</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <div id="cadastroModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Cadastro</h2>
+      <form id="cadastroForm">
+        <input type="text" id="cadastroNome" placeholder="Nome completo" required />
+        <input type="email" id="cadastroEmail" placeholder="E-mail" required />
+        <input type="password" id="cadastroPassword" placeholder="Senha" required />
+        <input type="password" id="cadastroConfirmPassword" placeholder="Confirmar senha" required />
+        <button type="submit" class="btn">Cadastrar</button>
+        <p class="switch-modal">
+          Já tem conta? <a href="#" id="switchToLogin">Faça login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
